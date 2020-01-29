@@ -1,4 +1,4 @@
-# CompiledMCR Events (Manchester Tech Meetups)
+# CompiledEDI Events (Edinburgh Tech Meetups)
 
 This is an aggregator for groups / events across a variety of services, which is then outputted on a website, in a JSON format, and a iCal file (which can be added/shown in a calendar).
 
