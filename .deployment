@@ -1,3 +1,2 @@
 [config]
-command = npm start
-project = /_site
+command = deploy.cmd
