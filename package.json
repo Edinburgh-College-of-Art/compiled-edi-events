@@ -1,5 +1,5 @@
 {
-  "name": "manchester-tech-meetups",
+  "name": "edinburgh-tech-meetups",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sean12697/manchester-tech-meetups.git"
+    "url": "git+https://git.ecdf.ed.ac.uk/design-informatics/compiled-edi-events.git"
   },
   "author": "",
   "license": "ISC",

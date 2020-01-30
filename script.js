@@ -11,7 +11,7 @@ let fs = require('fs-extra'),
 
     require('events').EventEmitter.prototype._maxListeners = 0;
 
-let cal = ical({domain: 'https://events.compiledmcr.com/', name: 'CompiledMCR Events (Manchester Tech Meetups)'});
+let cal = ical({domain: 'https://events.compiledmcr.com/', name: 'CompiledMCR Events (Edinburgh Tech Meetups)'});
 
 // Moving static files to site
 shell.mkdir('-p', `${__dirname}/_site`);

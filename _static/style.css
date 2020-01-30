@@ -6,7 +6,7 @@ body {
 }
 
 .steelBlue, header, footer {
-    background-color: #4682b4;
+    background-color: #BC0072;
     color: white;
 }
 
@@ -65,7 +65,7 @@ h3 {
     cursor: pointer;
     background-color: #cecece;
     color: #0000007d;
-} 
+}
 
 #selected {
     background-color: white;
@@ -135,8 +135,8 @@ a {
   text-decoration: inherit; /* no underline */
 }
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 .locationDiv {

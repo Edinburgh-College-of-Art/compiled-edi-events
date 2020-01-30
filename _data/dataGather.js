@@ -8,7 +8,8 @@ class dataGather {
         this.eventbrite = new eventbrite();
         this.meetup = new meetup();
         this.googleCalendar = new googleCalendar("a73q3trj8bssqjifgolb1q8fr4@group.calendar.google.com", "https://technw.uk/calendar", "TechNW", googleCalendarKey);
-        this.sources = [this.eventbrite, this.meetup, this.googleCalendar];
+        // this.sources = [this.eventbrite, this.meetup, this.googleCalendar];
+        this.sources = [this.eventbrite, this.meetup];
     }
 
     async getData() {
@@ -57,10 +58,10 @@ class dataGather {
             month = '' + (d.getMonth() + 1),
             day = '' + d.getDate(),
             year = d.getFullYear();
-    
+
         if (month.length < 2) month = '0' + month;
         if (day.length < 2) day = '0' + day;
-    
+
         return [day, month, year].join('-');
     }
 }
