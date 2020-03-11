@@ -62,7 +62,12 @@ class eventbrite {
                     let data = flatterned.map((event, i) => {
                         event.venue = venues[i].address != undefined ? venues[i].address.localized_address_display : "N/A";
                         return event;
-                    }) // Once all venues have been added, return
+                    }).filter(event => { // filter for Edinburgh events
+                      if (event.venue.includes('Edinburgh') || event.venue.includes('EH') || event.venue.includes('edinburgh')){
+                        return true;
+                      }
+                      return false;
+                      }) // Once all venues have been added, return
                     resolve(data);
                 });
             })
