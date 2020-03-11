@@ -24,7 +24,7 @@ options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--incognito')
 options.add_argument('--headless')
-driver = webdriver.Chrome(os.path.join(dir_path,"chromedriver"), options=options)
+driver = webdriver.Chrome(os.path.join(dir_path,"chromedriver"), options=options) # download chromedriver and add to the same directory as this file
 url = "https://www.meetup.com/find/tech/?allMeetups=true&radius=25&userFreeform=Edinburgh%2C+United+Kingdom&mcName=Edinburgh%2C+GB&lat=55.9489&lon=-3.1631927&sort=default"
 
 driver.get(url)
