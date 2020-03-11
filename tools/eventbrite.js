@@ -53,4 +53,10 @@ module.exports = [{
 		name: "TruVs",
 		img: "https://cdn.evbuc.com/images/64529450/310161865775/2/original.png",
 		url: "https://www.eventbrite.com/o/truvs-22338858011"
-	}];
+	}, {
+		id: 8374658101,
+		name: "CodeClan Digital Skills Academy",
+		img: "https://cdn.evbuc.com/images/50387419/149431978582/4/original.png",
+		url: "https://www.eventbrite.co.uk/o/codeclan-digital-skills-academy-8374658101"
+	}
+];
