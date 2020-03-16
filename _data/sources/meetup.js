@@ -63,7 +63,7 @@ class meetup {
 
     async getGroups() {
         return new Promise(resolve => {
-            Promise.all(this.groups.map((groupId, i) => new Promise(resolve => setTimeout(() => resolve(groupId), i*500)).then(groupId => {
+            Promise.all(this.groups.map((groupId, i) => new Promise(resolve => setTimeout(() => resolve(groupId), i*400)).then(groupId => {
               console.log('Fetching group details for: ', groupId);
               return fetch(this.apiGroup(groupId), this.header);
             }))).then(responses =>
@@ -77,7 +77,7 @@ class meetup {
 
     async getEvents() {
         return new Promise(resolve => {
-            Promise.all(this.groups.map((groupId, i) => new Promise(resolve => setTimeout(() => resolve(groupId), i*500)).then(groupId => {
+            Promise.all(this.groups.map((groupId, i) => new Promise(resolve => setTimeout(() => resolve(groupId), i*400)).then(groupId => {
               console.log('Fetching events for: ', groupId);
               return fetch(this.apiEvents(groupId), this.header);
             }))).then(responses =>
