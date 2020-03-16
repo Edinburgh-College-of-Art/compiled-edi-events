@@ -3,7 +3,9 @@ const fetch = require("node-fetch"),
     event = require("./templates/event");
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return function(x) {
+    return new Promise(resolve => setTimeout(() => resolve(x), ms));
+  };
 }
 
 class meetup {
@@ -61,15 +63,11 @@ class meetup {
 
     async getGroups() {
         return new Promise(resolve => {
-            Promise.all(this.groups.map(async groupId => {
-              await sleep(10000);
-              console.log("sleep for: ", groupId);
+            Promise.all(this.groups.map((groupId, i) => new Promise(resolve => setTimeout(() => resolve(groupId), i*500)).then(groupId => {
+              console.log('Fetching group details for: ', groupId);
               return fetch(this.apiGroup(groupId), this.header);
-            })).then(responses =>
-                Promise.all(responses.map(res => {
-                  // console.log(res.headers);
-                  return res.text();
-                }))
+            }))).then(responses =>
+                Promise.all(responses.map(res => res.text()))
             ).then(texts => {
                 let json = texts.map(t => JSON.parse(t)).filter(e => !e.hasOwnProperty("errors")).map(this.group);
                 resolve(json);
@@ -79,10 +77,10 @@ class meetup {
 
     async getEvents() {
         return new Promise(resolve => {
-            Promise.all(this.groups.map(async groupId => {
-              await sleep(10000);
+            Promise.all(this.groups.map((groupId, i) => new Promise(resolve => setTimeout(() => resolve(groupId), i*500)).then(groupId => {
+              console.log('Fetching events for: ', groupId);
               return fetch(this.apiEvents(groupId), this.header);
-            })).then(responses =>
+            }))).then(responses =>
                 Promise.all(responses.map(res => res.text()))
             ).then(texts => {
                 let json = texts.map(t => JSON.parse(t));
