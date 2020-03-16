@@ -2,12 +2,6 @@ const fetch = require("node-fetch"),
     group = require("./templates/group"),
     event = require("./templates/event");
 
-function sleep(ms) {
-  return function(x) {
-    return new Promise(resolve => setTimeout(() => resolve(x), ms));
-  };
-}
-
 class meetup {
     constructor() {
         this.groups = require("./groupIds/meetup");
